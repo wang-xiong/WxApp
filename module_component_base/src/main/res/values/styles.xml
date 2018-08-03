@@ -1,0 +1,41 @@
+<resources>
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--全屏属性，此时状态栏不显示，标题栏显示-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+
+        <!--去掉原来的ActionBar-->
+        <!--<item name="windowActionBar">false</item>-->
+
+        <!-- API Level 22 编译要去点android 去掉标题栏-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!-- <item name="android:windowNoTitle">true</item>-->
+
+        <!-- Actionbar color -->
+        <!--<item name="colorPrimary">@color/material_deep_teal_500</item>-->
+        <!--Status bar color-->
+        <!--<item name="colorPrimaryDark">@color/material_deep_teal_500</item>-->
+
+        <!--Window color-->
+        <!--<item name="android:windowBackground">@android:color/white</item>-->
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.AppTheme">
+
+    </style>
+
+    <!--水平分割线线-->
+    <style name="HorizontalLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#DDDDDD</item>
+    </style>
+
+    <!--垂直分割线-->
+    <style name="VerticalLineStyle">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#DDDDDD</item>
+    </style>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_item_home"
+        android:icon="@drawable/bottom_first_tab_bg"
+        android:title="首页"></item>
+    <item
+        android:id="@+id/bottom_item_goods"
+        android:icon="@drawable/bottom_second_tab_bg"
+        android:title="知识"></item>
+    <item
+        android:id="@+id/bottom_item_guide"
+        android:icon="@drawable/bottom_third_tab"
+        android:title="导航"></item>
+    <item
+        android:id="@+id/bottom_item_me"
+        android:icon="@drawable/bottom_fourth_tab"
+        android:title="我的"></item>
+</menu>

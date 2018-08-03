@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.module_common_ui" >
+    <application
+        android:name="debug.MyApplication"
+        android:theme="@style/AppTheme"
+        android:icon="@mipmap/ic_launcher">
+        <activity android:name=".home.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".recycler.TagListActivity"></activity>
+        <activity android:name=".pull_to_refresh.ExpandListActivity"></activity>
+        <activity android:name=".popup.PopupActivity"></activity>
+        <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".pull_to_refresh.PullToRefreshActivity"></activity>
+    </application>
+</manifest>

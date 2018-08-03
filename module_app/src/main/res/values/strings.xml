@@ -1,0 +1,6 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">module_app</string>
+    <string name="mall_item_article_author">作者：<xliff:g id="author">%s</xliff:g></string>
+    <string name="mall_item_article_classify">分类：<xliff:g id="classify">%s</xliff:g></string>
+    <string name="mall_item_article_time">时间：<xliff:g id="time">%s</xliff:g></string>
+</resources>

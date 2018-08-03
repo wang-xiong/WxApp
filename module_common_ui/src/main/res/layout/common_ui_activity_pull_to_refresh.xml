@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pull_to_refresh_list_view"
+        ptr:ptrDrawable="@drawable/default_ptr_flip"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrHeaderBackground="@android:color/transparent"
+        ptr:ptrHeaderTextColor="#919191">
+
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+    <!--  1.ptr是pullToRefresh的配置属性中添加 xmlns:ptr="http://schemas.android.com/apk/res-auto"。
+
+          2.ptr:ptrDrawable="";//这里可以设置自己的上拉下拉图标。
+
+          3.ptr:ptrHeaderBackground="";//上拉时底部的背景色，下拉时头部的背景色
+
+          4.ptr:ptrHeaderTextColor="";//上拉，下拉时Header,Footer显示的字体颜色
+
+          5.ptr:ptrHeaderSubTextColor="";//上拉,下拉Header,Footer中上次刷新时间的颜色
+
+          6.ptr:ptrShowIndicator="";//true时会在控件的右上角和右下角出现设置的icon
+
+          7.ptr:ptrAnimationStyle="";//显示时候图标的取值 ；flip:翻转；rotate:旋转
+
+          8.ptr:ptrRotateDrawableWhilePulling="";//当动画为rotate时,下拉是否旋转
+
+          9.ptr:ptrRefreshableViewBackground="";//设置整个控件布局的背景颜色
+
+          10.ptr:ptrScrollingWhileRefreshingEnabled="";//刷新的时候是否允许ListView或者GridView滚动。推荐使用true
+
+          11.ptr:prtListViewExtrasEnabled="";//决定Header,Footer以何种方式加入PullToRefreshListView.其中为true时,
+          就是以Header的方式加入,在滚动刷新时头部会跟着一起滚动;为false时,就是以Footer的方式加入,在滚动的时候底部会跟着一起滚动。
+
+          12.ptr:ptrMode="";//设置是上拉,下拉还是两者都支持.both:两者都支持;
+          disabled:禁用下拉刷新;pullFromStart:仅支持下拉刷新;pullFromEnd:仅支持上拉刷新;manualOnly:只允许手动触发。
+          （注意：如果不在代码设置它默认的就只有下拉刷新）-->
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.homemodule">
+
+    <application>
+        <activity android:name=".activity.HomeActivity"></activity>
+        <activity android:name=".test.activity.MvpTestActivity"></activity>
+        <activity android:name=".test.activity.ToolbarActivity"></activity>
+    </application>
+</manifest>

@@ -1,0 +1,3 @@
+include ':app', ':module_component_base', ':module_home', ':module_welfare', ':module_common_ui'
+include ':module_app'
+include ':library:okhttp_library'
