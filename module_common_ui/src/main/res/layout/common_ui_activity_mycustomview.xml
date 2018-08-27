@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/start_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="开始动画" />
+
+            <Button
+                android:id="@+id/stop_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="停止动画" />
+        </LinearLayout>
+
+        <com.example.module_common_ui.view.animation.PathMeasureView
+            android:id="@+id/path_measure_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.module_common_ui.view.animation.LineView
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="10dp" />
+
+        <com.example.module_common_ui.view.animation.ClockView1
+            android:id="@+id/clock1_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <com.example.module_common_ui.view.customview.RectView
+            android:layout_width="200dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp" />
+
+        <com.example.module_common_ui.view.animation.MyPointView
+            android:id="@+id/point_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+
+</ScrollView>

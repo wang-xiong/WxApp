@@ -1,0 +1,6 @@
+Retrofit:Retrofit是square公司开发的一款针对Android网络请求的框架，底层默认基于okHttp实现
+OkHttp：也是Square公司开发的网络请求库
+RxJava: "a library for composing asynchronous and event-based programs using observable sequences for the Java VM"
+（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）。RxJava使异步操作变得非常简单。
+
+

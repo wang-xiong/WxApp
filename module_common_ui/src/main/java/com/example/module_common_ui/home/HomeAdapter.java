@@ -9,10 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.module_common_ui.AccountActivity;
+import com.example.module_common_ui.R;
+import com.example.module_common_ui.activity.AccountActivity;
+import com.example.module_common_ui.activity.ConstraintActivity;
+import com.example.module_common_ui.activity.CustomView2Activity;
+import com.example.module_common_ui.activity.CustomViewActivity;
+import com.example.module_common_ui.activity.DialogActivity;
+import com.example.module_common_ui.activity.HorizontalScrollViewActivity;
 import com.example.module_common_ui.popup.PopupActivity;
 import com.example.module_common_ui.pull_to_refresh.ExpandListActivity;
-import com.example.module_common_ui.R;
 import com.example.module_common_ui.pull_to_refresh.PullToRefreshActivity;
 import com.example.module_common_ui.recycler.TagListActivity;
 
@@ -63,11 +68,26 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         } else if ("2".equals(homeBean.getType())) {
             Intent intent = new Intent(mContext, ExpandListActivity.class);
             mContext.startActivity(intent);
-        } else if ("4".equals(homeBean.getType())) {
+        } else if ("3".equals(homeBean.getType())) {
             Intent intent = new Intent(mContext, PopupActivity.class);
             mContext.startActivity(intent);
         } else if ("4".equals(homeBean.getType())) {
             Intent intent = new Intent(mContext, AccountActivity.class);
+            mContext.startActivity(intent);
+        } else if ("5".equals(homeBean.getType())) {
+            Intent intent = new Intent(mContext, DialogActivity.class);
+            mContext.startActivity(intent);
+        } else if ("6".equals(homeBean.getType())) {
+            Intent intent = new Intent(mContext, ConstraintActivity.class);
+            mContext.startActivity(intent);
+        } else if ("7".equals(homeBean.getType())) {
+            Intent intent = new Intent(mContext, HorizontalScrollViewActivity.class);
+            mContext.startActivity(intent);
+        } else if ("8".equals(homeBean.getType())) {
+            Intent intent = new Intent(mContext, CustomViewActivity.class);
+            mContext.startActivity(intent);
+        } else if ("9".equals(homeBean.getType())) {
+            Intent intent = new Intent(mContext, CustomView2Activity.class);
             mContext.startActivity(intent);
         }
     }

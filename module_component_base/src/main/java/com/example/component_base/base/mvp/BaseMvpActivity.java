@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.component_base.Utils.StatusBarHelper;
+import com.example.component_base.base.BaseActivity;
 import com.example.component_base.base.mvp.inter.IPresenter;
 import com.example.component_base.base.mvp.inter.IView;
 import com.example.component_base.constants.BaseApplication;
@@ -18,22 +19,19 @@ import com.example.component_base.constants.BaseApplication;
  * 4.绑定Presenter和View;(onCreate绑定，onDestroy解绑)
  */
 
-public abstract class BaseMvpActivity<V extends IView, P extends IPresenter<V>> extends AppCompatActivity{
+public abstract class BaseMvpActivity<V extends IView, P extends IPresenter<V>> extends BaseActivity{
     private V mView;
     protected P mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BaseApplication.getBaseApplication().getActivityControl().addActivity(this);
-        StatusBarHelper.handleStatusBar(this);
         initPresenter();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        BaseApplication.getBaseApplication().getActivityControl().removeActivity(this);
         if (mPresenter != null) {
             mPresenter.detachView();
         }

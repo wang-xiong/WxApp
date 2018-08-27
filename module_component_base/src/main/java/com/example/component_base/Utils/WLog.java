@@ -9,7 +9,7 @@ import com.example.component_base.constants.BaseApplication;
  */
 
 public class WLog {
-    public static final String TAG = "wx_app";
+    private static final String TAG = "wx_app";
 
     public static void v(String msg) {
         if (BaseApplication.IS_DEBUG) {
@@ -43,31 +43,31 @@ public class WLog {
 
     public static void v(String tag, String msg) {
         if (BaseApplication.IS_DEBUG) {
-            Log.v(tag, msg);
+            Log.v(TAG, "[" + tag + "]" + msg);
         }
     }
 
     public static void d(String tag, String msg) {
         if (BaseApplication.IS_DEBUG) {
-            Log.d(tag, msg);
+            Log.d(TAG, "[" + tag + "]" + msg);
         }
     }
 
     public static void i(String tag, String msg) {
         if (BaseApplication.IS_DEBUG) {
-            Log.i(tag, msg);
+            Log.i(TAG, "[" + tag + "]" + msg);
         }
     }
 
     public static void w(String tag, String msg) {
         if (BaseApplication.IS_DEBUG) {
-            Log.w(tag, msg);
+            Log.w(TAG, "[" + tag + "]" + msg);
         }
     }
 
     public static void e(String tag, String msg) {
         if (BaseApplication.IS_DEBUG) {
-            Log.e(tag, msg);
+            Log.e(TAG, "[" + tag + "]" + msg);
         }
     }
 }

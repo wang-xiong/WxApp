@@ -9,4 +9,14 @@
         <item name="android:windowEnterAnimation">@anim/slile_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/slile_bottom_out</item>
     </style>
+
+    <style name="wm_popup_bottom_in_animation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/wm_popup_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/wm_popup_bottom_out</item>
+    </style>
+
+    <style name="dialog_view_theme" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

@@ -1,0 +1,26 @@
+动画
+
+动画分为：1.视图动画(View Animation)、2.属性动画(Property Animation)
+一.视图动画
+分为：1.补间动画（Tween Animation）、2.逐帧动画(Frame Animation)
+补间动画缺点：
+1.作用对象有限，只作用在视图上，无法对View对象属性进行动画操作
+2.没有改变View的属性，只是改变视觉效果
+3.动画效果单一，只实现了平移、旋转、缩放、透明度这些简单的动画需求
+
+二.属性动画（Android3.0 API11出现的新特性）
+特点：作用于任何对象、动画效果不只是四种基本变化、API11之后
+工作原理：`1、设置时常、设置初始值和结束值；2、设置变化逻辑即插值器；
+    3、每一次变化就重新给对象属性赋值一次；4、赋值后调用invalidate，即调用onDraw；5、重复以上直到初始值等于结束值
+关键类：ValueAnimator、ObjectAnimator
+1、ValueAnimator
+ValueAnimator.oFloat（）采用默认的浮点型估值器 (FloatEvaluator)
+ValueAnimator.ofInt（）采用默认的整型估值器（IntEvaluator）
+ValueAnimator.ofObject（）无默认估值器，需要自己定义
+
+插值器Interpolator
+估值器TypeEvaluator
+
+2、ObjectAnimator
+区别：ValueAnimator 类是先改变值，然后 手动赋值 给对象的属性从而实现动画；是 间接 对对象属性进行操作；
+     ObjectAnimator 类是先改变值，然后 自动赋值 给对象的属性从而实现动画；是 直接 对对象属性进行操作；

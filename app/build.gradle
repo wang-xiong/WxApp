@@ -20,13 +20,20 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false //代码混淆相关
+            //shrinkResources true //设置true后，可以开启混淆后去掉无用资源文件，减少应用体积
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
+    //implementation依赖是不可以传递的，只能再模块内有效
+    //api 和compile是一样的，对外公开，两者的区别在于是否影响其他模块编译
+    //annotationProcessor是注解处理器，在编译阶段处理注解的工具
+
+
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
@@ -36,9 +43,7 @@ dependencies {
         implementation project(':module_home')
     }
     implementation project(':module_component_base')
-    //implementation依赖是不可以传递的，只能再模块内有效
-    //api 和compile是一样的，对外公开，两者的区别在于是否影响其他模块编译
-    //annotationProcessor是注解处理器，在编译阶段处理注解的工具
+
     //路由注解处理器
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
     implementation rootProject.ext.dependencies.arouter_api
