@@ -24,6 +24,8 @@ public interface RequestServices {
 
     Call<RetrofitTestResult> getCall();
 
+    Call<ResponseBody> getString();
+
     @GET("top250")
     Call<MovieResult> getTop250(@Query("start") int start, @Query("count") int count);
 
