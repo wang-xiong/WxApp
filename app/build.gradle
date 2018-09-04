@@ -21,6 +21,15 @@ android {
         }
     }
 
+    signingConfigs {
+        config {
+            keyAlias 'wx'
+            keyPassword '123456'
+            storeFile file('../tools/sign/wx.keystore')
+            storePassword 'wxapp'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false //代码混淆相关
@@ -32,27 +41,20 @@ android {
         }
 
         debug {
-            minifyEnabled true //代码混淆相关
-            shrinkResources true //设置true后，可以开启混淆后去掉无用资源文件，减少应用体积
+            minifyEnabled false //代码混淆相关
+            //shrinkResources true //设置true后，可以开启混淆后去掉无用资源文件，减少应用体积
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            //signingConfig signingConfigs.config
         }
     }
 
-    signingConfigs {
-//        config {
-//            keyAlias 'wx'
-//            keyPassword '123456'
-//            storeFile file('../tools/sign/wx.keystore')
-//            storePassword 'wxapp'
-//        }
-    }
+
 
     //修改生成的apk名字
     applicationVariants.all { variant ->
         variant.outputs.all {
             if (variant.buildType.name == 'release') {
-                outputFileName = "wx_${defaultConfig.versionName}_${buildTypes.name}_${getTime()}.apk"
+                outputFileName = "wx_${defaultConfig.versionName}_${buildTypes}_${getTime()}.apk"
             }
         }
     }
@@ -65,9 +67,6 @@ dependencies {
 
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testImplementation rootProject.ext.dependencies.junit
-    androidTestImplementation rootProject.ext.dependencies.runner
-    androidTestImplementation rootProject.ext.dependencies.espresso_core
 
     if (!rootProject.ext.module_home.toBoolean()) {
         implementation project(':module_home')
@@ -80,7 +79,7 @@ dependencies {
 
 }
 
-def getTime() {
+def static getTime() {
     String today = new Date().format('YY年MM月dd日HH时mm分')
     return today
 }
