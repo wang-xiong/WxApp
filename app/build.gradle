@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
     defaultConfig {
         applicationId rootProject.ext.android.applicationId
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -18,11 +20,40 @@ android {
             }
         }
     }
+
     buildTypes {
         release {
             minifyEnabled false //代码混淆相关
             //shrinkResources true //设置true后，可以开启混淆后去掉无用资源文件，减少应用体积
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //定义签名
+            signingConfig signingConfigs.config
+        }
+
+        debug {
+            minifyEnabled true //代码混淆相关
+            shrinkResources true //设置true后，可以开启混淆后去掉无用资源文件，减少应用体积
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    signingConfigs {
+//        config {
+//            keyAlias 'wx'
+//            keyPassword '123456'
+//            storeFile file('../tools/sign/wx.keystore')
+//            storePassword 'wxapp'
+        }
+    }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == 'release') {
+                outputFileName = "wx_${defaultConfig.versionName}_${buildTypes.name}_${getTime()}.apk"
+            }
         }
     }
 }
@@ -31,7 +62,6 @@ dependencies {
     //implementation依赖是不可以传递的，只能再模块内有效
     //api 和compile是一样的，对外公开，两者的区别在于是否影响其他模块编译
     //annotationProcessor是注解处理器，在编译阶段处理注解的工具
-
 
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -48,4 +78,9 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
     implementation rootProject.ext.dependencies.arouter_api
 
+}
+
+def getTime() {
+    String today = new Date().format('YY年MM月dd日HH时mm分')
+    return today
 }
