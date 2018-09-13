@@ -48,8 +48,6 @@ android {
         }
     }
 
-
-
     //修改生成的apk名字
     applicationVariants.all { variant ->
         variant.outputs.all {
@@ -83,3 +81,4 @@ def static getTime() {
     String today = new Date().format('YY年MM月dd日HH时mm分')
     return today
 }
+

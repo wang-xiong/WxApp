@@ -2,7 +2,7 @@
 //应用全局配置config.gradle
 apply from: "config.gradle"
 
-buildscript {
+buildscript { //定义全局的相关属性
     
     repositories {
         //maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
@@ -18,7 +18,7 @@ buildscript {
     }
 }
 
-allprojects {
+allprojects { //定义各个模块的相关属性
     repositories {
         //maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         //maven { url 'https://dl.google.com/dl/android/maven2/' }
