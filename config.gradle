@@ -10,7 +10,7 @@ ext {
             targetSdkVersion        : 26,
             versionCode             : 1,
             versionName             : '1.0.0',
-            applicationId           : 'com.example.wangxiong.wxmoduletest',
+            applicationId           : 'com.example.wangxiong.wxapp',
 
 
             androidSupportSdkVersion: '27.1.1'

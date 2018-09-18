@@ -1,0 +1,3 @@
+APT(Annotation Processing Tool)
+要素：注解处理器(AbstractProcess) + 代码处理(javaPoet) + 处理器注册(AutoService) + apt
+

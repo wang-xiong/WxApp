@@ -1,0 +1,8 @@
+AutoRegister
+
+Transform API
+编译过程中，编译之后，打包dex文件之前，操作.class文件。目前 jarMerge、proguard、multi-dex、Instant-Run 都已经换成 Transform 实现。
+
+ASM:
+ASM是一个JAVA字节码分析，创建和修改的开源框架
+作用：分析一个类，从字节码角度创建一个类，修改一个已经编译过的类文件
