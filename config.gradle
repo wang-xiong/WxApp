@@ -38,6 +38,6 @@ ext {
 
             "okhttp3"         : 'com.squareup.okhttp3:okhttp:3.10.0',
             "pull_to_refresh" : 'com.github.userswlwork:pull-to-refresh:1.0.0',
-            "gson"            : 'com.google.code.gson:gson:2.8.2'
+            "gson"            : 'com.google.code.gson:gson:2.8.2',
     ]
 }
