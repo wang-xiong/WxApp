@@ -1,57 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.module_common_ui.view.MyRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/test_bt"
+    <com.example.module_common_ui.view.textview.MyTextView
+        android:id="@+id/my_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试"/>
-
-    <TextView
-        android:id="@+id/test_tv"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"/>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/name1"
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxWidth="200dp"
-            android:singleLine="true"
-            android:textColor="#333333"
-            android:text="热辣生活 麻辣诱惑 小龙虾"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/name2"
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxWidth="200dp"
-            android:textColor="#333333"
-            android:ellipsize="end"
-            android:text="热辣生活 麻辣诱惑 小龙虾"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/gray">
-
-    </View>
-</LinearLayout>
+        android:layout_height="match_parent" />
+</com.example.module_common_ui.view.MyRelativeLayout>
