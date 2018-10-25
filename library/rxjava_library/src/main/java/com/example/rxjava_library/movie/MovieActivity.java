@@ -23,7 +23,7 @@ public class MovieActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mMovieLoader = new MovieLoader();
     }
 
     public void getMovieList() {
