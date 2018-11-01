@@ -1,9 +1,16 @@
 Android 5.0之前
 
-Dalvik .dex
+Dalvik .dex JIT
+
+ART oat AOT
 
 Android 5.0之后
 ART虚拟机 安装期间 dex合并成.oat
+
+Android 7.0之后
+
+AOT + JIT 混合编译
+
 
 降低方法数在64k以下方法：
 1.检查应用的依赖和第三方依赖
@@ -13,3 +20,12 @@ MultiDex:(Android Gradle插件在Android Build Tool 21.1以后支持)
 1.multiDexEnabled = true;
 2.添加依赖库com.android.support:multidex:1.0.1
 3.Application的attachBaseContext方法 MultiDex.install(base);
+
+CPU架构 abi：   Zygote进程
+armeabi         32
+armeabi-v7a     32  目前大部分机器
+arm64-v8a       64  高端机型
+x86             32
+x86-64          64
+mips            32
+mips64          64

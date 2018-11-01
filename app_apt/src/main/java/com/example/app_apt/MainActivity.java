@@ -1,4 +1,4 @@
-package com.example.module_apt;
+package com.example.app_apt;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

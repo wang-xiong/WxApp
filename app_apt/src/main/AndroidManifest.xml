@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.example.module_apt" >
+package="com.example.app_apt" >
 
 <application
     android:allowBackup="true"
