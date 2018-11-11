@@ -15,6 +15,7 @@
         <activity android:name=".activity.CustomViewActivity"></activity>
         <activity android:name=".activity.CustomView2Activity"></activity>
         <activity android:name=".activity.TestActivity"></activity>
+        <activity android:name=".activity.ShadowActivity"></activity>
     </application>
 
 </manifest>

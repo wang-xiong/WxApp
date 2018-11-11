@@ -16,6 +16,7 @@ import com.example.module_common_ui.activity.CustomView2Activity;
 import com.example.module_common_ui.activity.CustomViewActivity;
 import com.example.module_common_ui.activity.DialogActivity;
 import com.example.module_common_ui.activity.HorizontalScrollViewActivity;
+import com.example.module_common_ui.activity.ShadowActivity;
 import com.example.module_common_ui.activity.TestActivity;
 import com.example.module_common_ui.popup.PopupActivity;
 import com.example.module_common_ui.pull_to_refresh.ExpandListActivity;
@@ -92,6 +93,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
             mContext.startActivity(intent);
         } else if ("10".equals(homeBean.getType())) {
             Intent intent = new Intent(mContext, TestActivity.class);
+            mContext.startActivity(intent);
+        } else if ("11".equals(homeBean.getType())) {
+            Intent intent = new Intent(mContext, ShadowActivity.class);
             mContext.startActivity(intent);
         }
     }

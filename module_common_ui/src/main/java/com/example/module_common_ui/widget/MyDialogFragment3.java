@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.module_common_ui.R;
@@ -31,6 +32,7 @@ public class MyDialogFragment3 extends AppCompatDialogFragment implements View.O
     public void onStart() {
         super.onStart();
         Window window = getDialog().getWindow();
+        window.setLayout(600, WindowManager.LayoutParams.WRAP_CONTENT);
 //        WindowManager.LayoutParams layoutParams = window.getAttributes();
 //        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
 //        window.setAttributes(layoutParams);
