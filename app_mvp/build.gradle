@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.example.app_mvvm"
+        applicationId "com.example.app_mvp"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -23,17 +23,11 @@ android {
         }
     }
 
-    //  支持dataBinding
-    dataBinding {
-        enabled = true
-    }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation rootProject.ext.dependencies.recyclerview_v7
     implementation rootProject.ext.dependencies.appcompat_v7
     implementation rootProject.ext.dependencies.constraint
 }

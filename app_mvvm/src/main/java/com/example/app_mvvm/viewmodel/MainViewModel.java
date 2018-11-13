@@ -1,69 +1,103 @@
 package com.example.app_mvvm.viewmodel;
 
-import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.databinding.ObservableInt;
+import android.os.AsyncTask;
 import android.view.View;
-import android.widget.Toast;
+
+import com.example.app_mvvm.model.Person;
+
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainViewModel {
-    public String username;
-    public String password;
 
-    private Context context;
+    public ObservableInt mProgressBarVisible = new ObservableInt(View.GONE);
 
-    public MainViewModel(Context context) {
-        this.context = context;
+    public ObservableInt mErrorViewVisible = new ObservableInt(View.GONE);
+
+    public ObservableInt mRecyclerViewVisible = new ObservableInt(View.GONE);
+
+    private MainViewModelListener listener;
+
+    public MainViewModel(MainViewModelListener listener) {
+        this.listener = listener;
     }
 
-    public TextWatcher userNameChangeListener() {
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                username = s.toString();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
+    public void loadData() {
+        DataAsyncTask dataAsyncTask = new DataAsyncTask(this);
+        dataAsyncTask.execute();
     }
 
-    public TextWatcher passwordChangeListener() {
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                password = s.toString();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
+    private void initView() {
+        mProgressBarVisible.set(View.VISIBLE);
+        mErrorViewVisible.set(View.GONE);
+        mRecyclerViewVisible.set(View.GONE);
     }
 
-    public void login(View view) {
-        if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
-            if (username.equals("wx") && password.equals("123456")) {
-                Toast.makeText(context, "登录成功",Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(context, "登录失败",Toast.LENGTH_LONG).show();
-            }
+    private void handlerResult(List<Person> dataList) {
+        mProgressBarVisible.set(View.GONE);
+        if (dataList == null) {
+            mErrorViewVisible.set(View.VISIBLE);
+            mRecyclerViewVisible.set(View.GONE);
         } else {
-            Toast.makeText(context, "用户名密码不能为空",Toast.LENGTH_LONG).show();
+            mErrorViewVisible.set(View.GONE);
+            mRecyclerViewVisible.set(View.VISIBLE);
+            if (listener != null) {
+                listener.showRecyclerView(dataList);
+            }
+        }
+    }
+
+
+    public interface MainViewModelListener {
+        void showRecyclerView(List<Person> dataList);
+    }
+
+    public static class DataAsyncTask extends AsyncTask<Void , Void, List<Person>> {
+
+        private WeakReference<MainViewModel> weakReference;
+
+        public DataAsyncTask(MainViewModel mainViewModel) {
+            weakReference = new WeakReference<>(mainViewModel);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            MainViewModel mainViewModel = weakReference.get();
+            if (mainViewModel != null) {
+                mainViewModel.initView();
+            }
+        }
+
+        @Override
+        protected List<Person> doInBackground(Void... voids) {
+            return initData();
+        }
+
+        @Override
+        protected void onPostExecute(List<Person> dataList) {
+            super.onPostExecute(dataList);
+            MainViewModel mainViewModel = weakReference.get();
+            if (mainViewModel != null) {
+               mainViewModel.handlerResult(dataList);
+            }
+
+        }
+
+        private List<Person> initData() {
+            ArrayList<Person> dataList = new ArrayList<>();
+            for (int i = 0 ; i<30; i++) {
+                dataList.add(new Person("zhangsan", "hello word mvvm"));
+            }
+            try {
+                Thread.currentThread().sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            //return  null;
+            return dataList;
         }
     }
 }
