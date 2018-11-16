@@ -35,7 +35,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //把implementation 用api代替,它是对外部公开的, 所有其他的module就不需要添加该依赖
-    api rootProject.ext.dependencies.constraint
+    api rootProject.ext.dependencies.constraint_layout
     api rootProject.ext.dependencies.appcompat_v7
     api rootProject.ext.dependencies.support_v4
 

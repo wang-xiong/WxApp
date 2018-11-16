@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileSdkVersion 28
 
 
 
     defaultConfig {
-        applicationId "com.example.app_mvp"
+        applicationId "com.example.app_amap"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -28,6 +28,19 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    // 高德地图 start
+    //3D地图so及jar,navi导航SDK 5.0.0以后版本包含了3D地图SDK，所以请不要同时引入map3d和navi SDK。
+    //api "com.amap.api:3dmap:$rootProject.latest.integration"
+    //定位功能
+    implementation "com.amap.api:location:latest.integration"
+    //搜索功能
+    implementation "com.amap.api:search:latest.integration"
+    // 导航
+    implementation "com.amap.api:navi-3dmap:latest.integration"
+    // 高德地图 end
+
     implementation rootProject.ext.dependencies.appcompat_v7
     implementation rootProject.ext.dependencies.constraint_layout
+
+
 }
