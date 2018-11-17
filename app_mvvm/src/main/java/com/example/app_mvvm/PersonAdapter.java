@@ -39,8 +39,13 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.Holder> {
     public void onBindViewHolder(@NonNull Holder holder, int position) {
 //        holder.name.setText(mDataList.get(position).getName());
 ////        holder.desc.setText(mDataList.get(position).getDesc());
-        ItemViewModel itemViewModel = new ItemViewModel(mContext, mDataList.get(position));
-        holder.getItemBinding().setItemViewModel(itemViewModel);
+        if (holder.getItemBinding().getItemViewModel() == null) {
+            ItemViewModel itemViewModel = new ItemViewModel(mContext, mDataList.get(position));
+            holder.getItemBinding().setItemViewModel(itemViewModel);
+        } else {
+            holder.getItemBinding().getItemViewModel().setPerson(mDataList.get(position));
+        }
+
     }
 
     @Override

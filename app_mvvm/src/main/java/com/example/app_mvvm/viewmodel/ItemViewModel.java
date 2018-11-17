@@ -2,11 +2,17 @@ package com.example.app_mvvm.viewmodel;
 
 import android.content.Context;
 import android.database.Observable;
+import android.databinding.BindingAdapter;
 import android.databinding.ObservableField;
+import android.net.Uri;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.app_mvvm.R;
 import com.example.app_mvvm.model.Person;
+
+import java.net.URL;
 
 public class ItemViewModel {
 
@@ -22,6 +28,23 @@ public class ItemViewModel {
 //        itemDesc.set(person.getDesc());
 
 
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public String getName() {
+        return person.getName();
+    }
+
+    public int getImgId() {
+        return R.mipmap.ic_launcher;
+    }
+
+    @BindingAdapter({"resId"})
+    public static void setImg(ImageView imageView, int resId) {
+        imageView.setImageResource(resId);
     }
 
     public void onClickItem(View view) {
