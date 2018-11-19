@@ -11,6 +11,13 @@ mac配置环境
 2.ls -l查看权限
 3.chmod +x gradle.bat 和 chmod +x gradle 添加x权限
 
+sudo chmod +x gradlew
+
+./gradlew javadocJar
+
+
+cd /Applications/
+cd Applications/
 
 例如:
 export ANDROID_HOME=/Users/baidu/Library/Android/sdk
