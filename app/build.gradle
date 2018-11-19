@@ -63,7 +63,6 @@ dependencies {
     //api 和compile是一样的，对外公开，两者的区别在于是否影响其他模块编译
     //annotationProcessor是注解处理器，在编译阶段处理注解的工具
 
-
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     if (!rootProject.ext.module_home.toBoolean()) {

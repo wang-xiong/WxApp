@@ -1,3 +1,4 @@
+#工程下的gitignore优先与模块下的gitignore，所以此处无效
 # Built application files
 *.apk
 *.ap_
