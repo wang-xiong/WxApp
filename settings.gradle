@@ -2,6 +2,7 @@ include ':app', ':module_component_base', ':module_home', ':module_welfare', ':m
 include ':module_app'
 include ':library:okhttp_library'
 include ':library:rxjava_library'
+include ':library:utils_library'
 include ':app_apt'
 include ':apt:apt_library'
 include ':apt:apt_annotation'

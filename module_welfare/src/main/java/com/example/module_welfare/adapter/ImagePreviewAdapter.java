@@ -1,13 +1,8 @@
 package com.example.module_welfare.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +10,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.component_base.Utils.ImageLoadUtil;
-import com.example.component_base.net.FilelDownload;
 import com.example.module_welfare.R;
 import com.example.module_welfare.bean.PreviewBean;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.List;
-
-import okhttp3.ResponseBody;
 
 /**
  * Created by wangxiong on 2018/7/22.

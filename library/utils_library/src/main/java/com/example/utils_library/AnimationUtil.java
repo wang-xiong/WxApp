@@ -1,8 +1,7 @@
-package com.example.component_base.Utils;
+package com.example.utils_library;
 
 import android.view.Gravity;
 
-import com.example.component_base.R;
 
 /**
  * Created by wangxiong on 2018/7/30.

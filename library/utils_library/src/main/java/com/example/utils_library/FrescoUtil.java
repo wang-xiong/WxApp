@@ -1,4 +1,4 @@
-package com.example.app_test;
+package com.example.utils_library;
 
 import android.app.Application;
 import android.graphics.Bitmap;
@@ -23,7 +23,6 @@ import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 
 import java.io.File;
-
 
 import okhttp3.OkHttpClient;
 

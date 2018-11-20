@@ -1,4 +1,4 @@
-package com.example.component_base.Utils;
+package com.example.utils_library;
 
 import android.util.Log;
 

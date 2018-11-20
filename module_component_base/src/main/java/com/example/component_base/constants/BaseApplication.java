@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.example.component_base.ARouter.ARouterConfig;
 import com.example.component_base.BuildConfig;
-import com.example.component_base.Utils.WLog;
+import com.example.utils_library.WLog;
 
 /**
  * Created by wangxiong on 2018/7/13.

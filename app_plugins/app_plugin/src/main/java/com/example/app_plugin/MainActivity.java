@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.app_plugin_module.ICommonInterface;
+import com.example.utils_library.AssetUtils;
 
 public class MainActivity extends AppCompatActivity {
 

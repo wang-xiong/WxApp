@@ -1,4 +1,4 @@
-package com.example.component_base.Utils;
+package com.example.utils_library;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.component_base.R;
 
 /**
  * Created by wangxiong on 2018/7/22.

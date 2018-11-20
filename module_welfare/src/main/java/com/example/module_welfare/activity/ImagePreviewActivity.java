@@ -3,10 +3,10 @@ package com.example.module_welfare.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -15,12 +15,12 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.component_base.ARouter.RouterIntentKV;
 import com.example.component_base.ARouter.RouterUrl;
 import com.example.component_base.base.mvc.BaseMvcPermissionActivity;
-import com.example.component_base.net.FilelDownload;
 import com.example.module_welfare.R;
 import com.example.module_welfare.adapter.ImagePreviewAdapter;
 import com.example.module_welfare.bean.PreviewBean;
 import com.example.okhttp_library.DisposeDataListener;
 import com.example.okhttp_library.RequestCenter;
+import com.example.utils_library.FilelDownload;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,6 +28,7 @@ import java.util.List;
 
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+
 
 @Route(path = RouterUrl.PATH_MODULE_WELFARE_IMAGE_PREVIEW)
 public class ImagePreviewActivity extends BaseMvcPermissionActivity implements View.OnClickListener {

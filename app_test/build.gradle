@@ -32,11 +32,5 @@ dependencies {
     implementation rootProject.ext.dependencies.appcompat_v7
     implementation rootProject.ext.dependencies.constraint_layout
 
-    //fresco start
-    implementation "com.facebook.fresco:fresco:$rootProject.ext.dependencies.frescoVersion"
-    implementation "com.facebook.fresco:animated-gif:$rootProject.ext.dependencies.frescoVersion"
-    implementation "com.facebook.fresco:animated-webp:$rootProject.ext.dependencies.frescoVersion"
-    implementation "com.facebook.fresco:webpsupport:$rootProject.ext.dependencies.frescoVersion"
-    implementation "com.facebook.fresco:imagepipeline-okhttp3:$rootProject.ext.dependencies.frescoVersion"
-    //fresco end
+    implementation project(':library:utils_library')
 }

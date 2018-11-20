@@ -1,7 +1,6 @@
-package com.example.component_base.net;
+package com.example.utils_library;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

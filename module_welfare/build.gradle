@@ -46,4 +46,6 @@ dependencies {
     implementation rootProject.ext.dependencies.arouter_api
 
     implementation rootProject.ext.dependencies.recyclerview_v7
+
+    implementation project(':library:utils_library')
 }

@@ -1,4 +1,4 @@
-package com.example.app_test;
+package com.example.utils_library;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
@@ -13,6 +13,15 @@ public class AlarmManagerUtils {
      * 1.进程被杀死，AlarmManager停止工作
      * 2.手机重启，AlarmManager停止工作
      * 3.各厂商的“心跳对齐”
+     */
+
+    /**
+     * 使用方法：
+     * AlarmManagerUtils alarmManagerUtils = AlarmManagerUtils.getInstance(this);
+     * alarmManagerUtils.createGetUpAlarmManager();
+     * alarmManagerUtils.getUpAlarmManagerStartWork();
+     * 新建广播，在广播接收器中调用
+     * AlarmManagerUtils.getInstance(context).getUpAlarmManagerWorkOnReceiver();
      */
 
     private static final long TIME_INTERVAL = 5 * 1000;//闹钟执行任务的时间间隔

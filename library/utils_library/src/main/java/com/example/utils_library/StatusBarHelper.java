@@ -1,8 +1,7 @@
-package com.example.component_base.Utils;
+package com.example.utils_library;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;

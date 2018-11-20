@@ -43,8 +43,5 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
     implementation rootProject.ext.dependencies.arouter_api
 
-    api rootProject.ext.dependencies.glide
-    api rootProject.ext.dependencies.okhttp3
-
-
+    implementation project(':library:utils_library')
 }

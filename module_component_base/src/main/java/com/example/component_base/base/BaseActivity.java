@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.component_base.Utils.StatusBarHelper;
 import com.example.component_base.constants.BaseApplication;
+import com.example.utils_library.StatusBarHelper;
 
 /**
  * Created by wangxiong on 2018/8/13.

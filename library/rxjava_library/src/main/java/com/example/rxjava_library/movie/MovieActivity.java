@@ -1,16 +1,12 @@
 package com.example.rxjava_library.movie;
 
 import android.app.Activity;
-import android.nfc.Tag;
 import android.os.Bundle;
 
 import com.example.component_base.Utils.WLog;
 
-import java.util.List;
-
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 /**
  * Created by wangxiong on 2018/8/13.

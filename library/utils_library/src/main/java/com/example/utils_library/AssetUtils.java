@@ -1,4 +1,4 @@
-package com.example.app_plugin;
+package com.example.utils_library;
 
 import android.content.Context;
 import android.content.res.AssetManager;
