@@ -11,7 +11,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-import com.example.component_base.Utils.BitmapUtil;
+import com.example.utils_library.BitmapUtil;
+
 
 /**
  * Created by wangxiong on 2018/7/26.

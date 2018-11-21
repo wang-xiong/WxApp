@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.example.component_base.Utils.ImageLoadUtil;
 import com.example.module_welfare.R;
 import com.example.module_welfare.bean.PreviewBean;
+import com.example.utils_library.ImageLoadUtil;
 
 import java.util.List;
 

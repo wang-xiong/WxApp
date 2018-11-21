@@ -15,6 +15,6 @@ import com.example.wangxiong.wxmoduletest.contract.WelcomeContract;
 public class WelcomeModel implements WelcomeContract.Model {
     @Override
     public Bitmap getWelcomeImg(Context context) {
-        return BitmapFactory.decodeResource(context.getResources(), R.mipmap.welcome);
+        return BitmapFactory.decodeResource(context.getResources(), R.drawable.welcome);
     }
 }

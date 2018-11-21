@@ -6,10 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.example.component_base.Utils.AppUtil;
-import com.example.component_base.Utils.WLog;
 import com.example.module_common_ui.view.alert.AlertView;
 import com.example.module_common_ui.view.alert.OnItemClickListener;
+import com.example.utils_library.AppUtil;
+import com.example.utils_library.WLog;
 
 /**
  * Created by wangxiong on 2018/7/30.

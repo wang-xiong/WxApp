@@ -17,8 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.component_base.Utils.AnimationUtil;
 import com.example.module_common_ui.R;
+import com.example.utils_library.AnimationUtil;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

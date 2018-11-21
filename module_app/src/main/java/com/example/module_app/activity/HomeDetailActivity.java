@@ -11,10 +11,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import com.example.component_base.Utils.WebViewUtil;
 import com.example.component_base.base.mvc.BaseMvcActivity;
 import com.example.module_app.IntentKV;
 import com.example.module_app.R;
+import com.example.utils_library.WebViewUtil;
 
 /**
  * Created by wangxiong on 2018/8/3.

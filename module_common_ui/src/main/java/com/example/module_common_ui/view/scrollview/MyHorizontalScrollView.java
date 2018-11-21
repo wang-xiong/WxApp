@@ -11,7 +11,8 @@ import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-import com.example.component_base.Utils.WLog;
+
+import com.example.utils_library.WLog;
 
 import java.util.HashMap;
 import java.util.Map;

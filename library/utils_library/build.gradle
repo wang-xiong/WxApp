@@ -40,4 +40,5 @@ dependencies {
     
     api rootProject.ext.dependencies.glide
 
+    api project(":library:baseres_library")
 }

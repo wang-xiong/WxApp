@@ -74,6 +74,9 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
     implementation rootProject.ext.dependencies.arouter_api
 
+    implementation project(":library:utils_library")
+
+
 }
 
 def static getTime() {

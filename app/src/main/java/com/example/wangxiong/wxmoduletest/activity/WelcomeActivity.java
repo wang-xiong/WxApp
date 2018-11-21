@@ -1,18 +1,21 @@
 package com.example.wangxiong.wxmoduletest.activity;
 
+import android.Manifest;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.component_base.base.mvp.BaseMvpActivity;
+import com.example.component_base.base.mvp.BaseMvpPermissionActivity;
+import com.example.utils_library.PermissionHelper;
+import com.example.utils_library.PermissionUtil;
 import com.example.wangxiong.wxmoduletest.R;
 import com.example.wangxiong.wxmoduletest.arouter.RouterCenter;
 import com.example.wangxiong.wxmoduletest.contract.WelcomeContract;
 import com.example.wangxiong.wxmoduletest.presenter.WelcomePresenter;
 
-public class WelcomeActivity extends BaseMvpActivity<WelcomeContract.View, WelcomeContract.Presenter> implements WelcomeContract.View
-        , View.OnClickListener{
+public class WelcomeActivity extends BaseMvpPermissionActivity<WelcomeContract.View, WelcomeContract.Presenter> implements WelcomeContract.View
+        , View.OnClickListener {
 
     private ImageView mImageView;
 
@@ -22,10 +25,25 @@ public class WelcomeActivity extends BaseMvpActivity<WelcomeContract.View, Welco
         setContentView(R.layout.activity_welcome);
         mImageView = findViewById(R.id.welcome);
         mImageView.setOnClickListener(this);
-        initData();
-        toHome();
-    }
 
+        if (PermissionUtil.hasAllPermission(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE})) {
+            initData();
+            toHome();
+        } else {
+            requestPermission(new String[]{Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE}, new PermissionHelper.PermissionInterface() {
+                @Override
+                public int getRequestCode() {
+                    return 1111;
+                }
+
+                @Override
+                public void onRequestPermissionSuccess() {
+                    initData();
+                    toHome();
+                }
+            });
+        }
+    }
 
 
     @Override
@@ -66,7 +84,6 @@ public class WelcomeActivity extends BaseMvpActivity<WelcomeContract.View, Welco
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.welcome:
-
                 break;
         }
     }

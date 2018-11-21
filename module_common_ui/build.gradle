@@ -61,4 +61,7 @@ dependencies {
     implementation rootProject.ext.dependencies.pull_to_refresh
     implementation rootProject.ext.dependencies.gson
 
+    implementation project(":library:utils_library")
+
+
 }

@@ -8,9 +8,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.component_base.ARouter.RouterUrl;
-import com.example.component_base.Utils.JsonUtil;
 import com.example.component_base.base.mvc.BaseMvcActivity;
 import com.example.module_common_ui.R;
+import com.example.utils_library.JsonUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

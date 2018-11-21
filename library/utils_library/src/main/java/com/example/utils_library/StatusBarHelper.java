@@ -61,7 +61,7 @@ public class StatusBarHelper {
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(statusBarColor);
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                //4.4-5.0使用三方工具类，有些4.4的手机有问题，这里为演示方便，不使用沉浸式
+                //4.4-5.0使用三方工具类，有些4.4的手机有问题,不使用沉浸式
                 window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                 SystemBarTintManager tintManager = new SystemBarTintManager(activity);
                 tintManager.setStatusBarTintEnabled(true);

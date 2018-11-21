@@ -6,3 +6,11 @@ JNI:Java Native Interface
 1.数据类型：
 基本数据类型
 引用类型
+2.JNI的属性、方法、数组、引用
+3.JNI的异常处理
+
+LLDB工具
+命令：
+po
+bt
+image lookup
