@@ -12,7 +12,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 
-import com.example.utils_library.WLog;
+import com.example.utils_library.log.WLog;
 
 import java.util.HashMap;
 import java.util.Map;

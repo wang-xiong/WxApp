@@ -1,16 +1,9 @@
-package com.example.utils_library;
+package com.example.utils_library.permission;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;

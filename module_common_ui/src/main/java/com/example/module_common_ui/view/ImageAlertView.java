@@ -9,7 +9,7 @@ import android.net.Uri;
 import com.example.module_common_ui.view.alert.AlertView;
 import com.example.module_common_ui.view.alert.OnItemClickListener;
 import com.example.utils_library.AppUtil;
-import com.example.utils_library.WLog;
+import com.example.utils_library.log.WLog;
 
 /**
  * Created by wangxiong on 2018/7/30.

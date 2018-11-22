@@ -12,6 +12,7 @@ buildscript { //定义全局的相关属性
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
+
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha07'

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.example.component_base.base.mvp.inter.IPresenter;
 import com.example.component_base.base.mvp.inter.IView;
-import com.example.utils_library.PermissionHelper;
+import com.example.utils_library.permission.PermissionHelper;
 
 /**
  * Created by wangxiong on 2018/7/25.

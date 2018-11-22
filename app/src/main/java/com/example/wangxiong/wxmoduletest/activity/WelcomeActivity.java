@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.component_base.base.mvp.BaseMvpPermissionActivity;
-import com.example.utils_library.PermissionHelper;
-import com.example.utils_library.PermissionUtil;
+import com.example.utils_library.permission.PermissionHelper;
+import com.example.utils_library.permission.PermissionUtil;
 import com.example.wangxiong.wxmoduletest.R;
 import com.example.wangxiong.wxmoduletest.arouter.RouterCenter;
 import com.example.wangxiong.wxmoduletest.contract.WelcomeContract;

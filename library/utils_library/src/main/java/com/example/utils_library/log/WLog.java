@@ -1,6 +1,8 @@
-package com.example.utils_library;
+package com.example.utils_library.log;
 
 import android.util.Log;
+
+import com.example.utils_library.BuildConfig;
 
 /**
  * Created by wangxiong on 2018/7/13.

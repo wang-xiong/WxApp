@@ -1,4 +1,4 @@
-package com.example.utils_library;
+package com.example.utils_library.permission;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+
+import com.example.utils_library.permission.PermissionUtil;
 
 import java.util.List;
 
