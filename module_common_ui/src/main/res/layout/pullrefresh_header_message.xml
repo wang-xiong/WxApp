@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.module_common_ui.recycler.PullRefreshRecyclerView
-        android:id="@+id/rv_tag_list"
+    
+    <TextView
+        android:id="@+id/pullRefresh_message"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:text="加载了多少数据"/>
 
 </LinearLayout>
