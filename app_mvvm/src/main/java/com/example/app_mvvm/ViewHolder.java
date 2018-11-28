@@ -1,4 +1,4 @@
-package com.fashare.adapter;
+package com.example.app_mvvm;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

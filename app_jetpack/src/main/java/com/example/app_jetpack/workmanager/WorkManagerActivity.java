@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.app_jetpack.R;
 import com.example.app_jetpack.workmanager.MyWorker;
 
 import java.text.SimpleDateFormat;

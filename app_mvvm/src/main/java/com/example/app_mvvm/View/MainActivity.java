@@ -18,6 +18,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements MainViewModel.MainViewModelListener {
     private ActivityMainBinding activityMainBinding;
     private MainViewModel mainViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
