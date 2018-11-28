@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="item" type="com.fashare.mvvm_juejin.viewmodel.TabVM.Item"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <include layout="@layout/g_line_horizontal"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            bind:placeholder="@{item.isSelected? item.iconResSelected: item.iconResNormal}"
+            tools:src="@drawable/tab_home"/>
+    </RelativeLayout>
+
+</layout>
+
