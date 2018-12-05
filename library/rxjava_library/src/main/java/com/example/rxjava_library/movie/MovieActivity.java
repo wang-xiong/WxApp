@@ -2,8 +2,8 @@ package com.example.rxjava_library.movie;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
-import com.example.component_base.Utils.WLog;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -24,24 +24,25 @@ public class MovieActivity extends Activity {
 
     public void getMovieList() {
         mMovieLoader.getMovie(0, 10).subscribe(new Observer<MovieResult>() {
+
             @Override
             public void onSubscribe(Disposable d) {
-                WLog.i(TAG, "onSubscribe");
+                Log.i(TAG, "onSubscribe");
             }
 
             @Override
             public void onNext(MovieResult movieResult) {
-                WLog.i(TAG, "onNext");
+                Log.i(TAG, "onNext");
             }
 
             @Override
             public void onError(Throwable e) {
-                WLog.i(TAG, "onError");
+                Log.i(TAG, "onError");
             }
 
             @Override
             public void onComplete() {
-                WLog.i(TAG, "onComplete");
+                Log.i(TAG, "onComplete");
             }
         });
     }

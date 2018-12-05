@@ -6,7 +6,7 @@
 
         <variable
             name="itemViewModel"
-            type="com.example.app_mvvm.viewmodel.ItemViewModel" />
+            type="com.example.app_mvvm.test1.viewmodel.ItemViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
