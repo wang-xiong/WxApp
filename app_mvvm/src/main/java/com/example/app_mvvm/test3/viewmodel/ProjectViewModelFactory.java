@@ -23,6 +23,8 @@ public class ProjectViewModelFactory implements ViewModelProvider.Factory {
 
         if (modelClass.isAssignableFrom(ProjectListViewModel.class)) {
             return (T) new ProjectListViewModel(projectRepository, application);
+        } else if (modelClass.isAssignableFrom(ProjectViewModel.class)) {
+            return (T) new ProjectViewModel(projectRepository, application);
         }
         throw new IllegalArgumentException("Unknown ViewModel class");
     }

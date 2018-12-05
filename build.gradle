@@ -7,6 +7,7 @@ buildscript { //定义全局的相关属性
     repositories {
         //{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
         google()
         jcenter()
     }
@@ -24,9 +25,8 @@ buildscript { //定义全局的相关属性
 
 allprojects { //定义各个模块的相关属性
     repositories {
-        //maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-        //maven { url 'https://dl.google.com/dl/android/maven2/' }
         maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
         google()
         jcenter()
     }
