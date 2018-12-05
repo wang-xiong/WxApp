@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.app_mvvm.R;
-import com.example.app_mvvm.databinding.ActivityHomeBinding;
+import com.example.app_mvvm.databinding.ActivityTest2Binding;
 import com.example.app_mvvm.test2.viewmodel.TabPagesVM;
 import com.example.app_mvvm.test2.viewmodel.TabVM;
 
@@ -24,7 +24,7 @@ public class Test2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
 
-        ActivityHomeBinding activityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_test2);
+        ActivityTest2Binding activityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_test2);
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new HomeFragment());
         fragmentList.add(new ExploreFragment());

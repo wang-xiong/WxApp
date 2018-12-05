@@ -44,7 +44,7 @@ public class ProjectFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project_list, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_project_details, container, false);
         return binding.getRoot();
     }
 
