@@ -1,4 +1,4 @@
-include ':app', ':module_component_base', ':module_home', ':module_welfare', ':module_common_ui', ':app_hybrid', ':app_jetpack', ':app_mvp', ':app_amap', ':app_test', ':app_jni'
+include ':app', ':module_component_base', ':module_home', ':module_welfare', ':module_common_ui', ':app_hybrid', ':app_jetpack', ':app_mvp', ':app_amap', ':app_test', ':app_jni', ':app_okhttp'
 include ':module_app'
 include ':library:okhttp_library'
 include ':library:rxjava_library'
