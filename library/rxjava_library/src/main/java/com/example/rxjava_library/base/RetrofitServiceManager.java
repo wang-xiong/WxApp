@@ -1,9 +1,14 @@
 package com.example.rxjava_library.base;
 
 import com.example.rxjava_library.movie.Constant;
+import com.example.rxjava_library.movie.MovieResult;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -56,6 +61,14 @@ public class RetrofitServiceManager {
         return instance;
     }
 
+    public <T, M> void request(Class<T> service, RetrofitServiceListener <T, M> listener) {
+        Observable<M> observable = listener.getObservable(mRetrofit.create(service));
+        observable.subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(listener.getObserver());
+    }
+
     /**
      * 获取service接口
      * @param service
@@ -65,5 +78,13 @@ public class RetrofitServiceManager {
     public <T> T create(Class<T> service) {
         return mRetrofit.create(service);
     }
+
+    public interface RetrofitServiceListener<T, M> {
+        Observable<M> getObservable(T t);
+
+        Observer<M> getObserver();
+    }
+
+
 
 }
