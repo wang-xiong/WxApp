@@ -1,4 +1,4 @@
-package com.example.app_okhttp;
+package com.example.app_okhttp.okhttptest;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
+
+import com.example.app_okhttp.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,7 +22,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class DownloadActivity extends AppCompatActivity {
+public class FileDownloadActivity extends AppCompatActivity {
 
     private OkHttpClient okHttpClient;
     private MyHandler handler;
@@ -96,9 +98,9 @@ public class DownloadActivity extends AppCompatActivity {
 
     static class MyHandler extends Handler {
 
-        private DownloadActivity activity;
+        private FileDownloadActivity activity;
 
-        public MyHandler(DownloadActivity activity) {
+        public MyHandler(FileDownloadActivity activity) {
             this.activity = activity;
         }
 
@@ -133,6 +135,8 @@ public class DownloadActivity extends AppCompatActivity {
             while ((len = in.read(buffer)) != -1) {
                 fos.write(buffer);
 
+                //fos.write(buffer, 0, len);
+
                 sum += len;
                 int progress = (int) (sum * 1.0f / total * 100);
 
@@ -140,6 +144,7 @@ public class DownloadActivity extends AppCompatActivity {
                 message.arg1 = progress;
                 message.sendToTarget();
             }
+            //fos.flush();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -1,6 +1,5 @@
-package com.example.app_okhttp;
+package com.example.app_okhttp.okhttptest;
 
-import com.example.app_okhttp.ProgressListener;
 
 import java.io.IOException;
 

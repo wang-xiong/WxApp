@@ -1,4 +1,4 @@
-package com.example.app_okhttp;
+package com.example.app_okhttp.okhttptest;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.app_okhttp.R;
 import com.example.app_okhttp.okhttp.BaseCallBack;
 import com.example.app_okhttp.okhttp.SimpleHttpClient;
 
@@ -28,8 +29,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+public class OkHttpTestActivity extends AppCompatActivity {
+    private static final String TAG = "OkDownActivity";
 
     private OkHttpClient okHttpClient;
 
