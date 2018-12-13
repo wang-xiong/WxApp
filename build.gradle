@@ -18,6 +18,11 @@ buildscript { //定义全局的相关属性
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha07'
 
+        //autoregister用到
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'com.billy.android:autoregister:1.4.1'
+
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
