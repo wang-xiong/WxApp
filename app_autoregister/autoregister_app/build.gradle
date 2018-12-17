@@ -52,8 +52,8 @@ dependencies {
   在com.example.base_interface.ComponentManager.class文件中
   static
   {
-    register(new ComponentAPP()); //scanInterface的实现类
-    register(new ComponentA()); //scanSuperClass的子类
+    ComponentManager.register(new ComponentAPP()); //scanInterface的实现类
+    ComponentManager.register(new ComponentA()); //scanSuperClass的子类
   }
  */
 
@@ -65,7 +65,6 @@ project.ext.registerInfoList = [
                 , 'scanSuperClasses'     : ['com.example.autoregister_app.BaseComponent']
                 //未指定codeInsertToMethodName，默认插入到static块中，故此处register必须为static方法
                 , 'codeInsertToClassName': 'com.example.base_interface.ComponentManager'
-
                 , 'registerMethodName'   : 'register'
                 //排除的类，支持正则表达式（包分隔符需要用/表示，不能用.）//排除这个基类
                 , 'exclude'              : ['com.example.autoregister_app.BaseComponent'.replaceAll('\\.', '/')]
@@ -81,3 +80,5 @@ autoregister {
     registerInfo = registerInfoList
     cacheEnabled = true
 }
+//文档：https://github.com/luckybilly/AutoRegister
+//cacheEnabled = false来关闭增量编译
