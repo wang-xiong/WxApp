@@ -33,3 +33,8 @@ export PATH=$PATH:/Users/baidu/flutter/bin
 
 抓取界面工具:uiautomatorviewer
 路径:/Users/baidu/Library/Android/sdk/tools/bin
+
+
+
+制定gradle的jdk路径，在gradle.properties添加
+org.gradle.java.home=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home
