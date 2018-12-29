@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+
+
+
+buildscript {
+    repositories {
+        maven {
+            url uri('../repo')
+        }
+    }
+
+    dependencies {
+        classpath 'com.wx.plugin.example.plugin:plugin_test:1.1.0'
+    }
+}
+apply plugin: 'test-plugin'
+
+//定义外部参数，pluginExt nestExt等相关参数都是在test-plugin插件中定义的
+pluginExt {
+    param1 = 'app param1'
+    nestExt {
+        nestParam1 = 'app nestParam1'
+    }
+}
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        applicationId "com.example.app_gradle_plugin"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}

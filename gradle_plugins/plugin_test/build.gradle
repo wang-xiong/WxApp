@@ -1,0 +1,29 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    //implementation 'com.android.tools.build:gradle:3.1.4'
+}
+
+repositories {
+    mavenCentral()
+}
+
+//maven库的坐标：
+//group会被作为坐标的groupId, version作为坐标的version，坐标的artifactId是module名（plugin_test）
+//执行uploadArchives Task会生成一个repo目录，里边有此gradle插件
+
+group='com.wx.plugin.example.plugin'
+version='1.1.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
+
+
