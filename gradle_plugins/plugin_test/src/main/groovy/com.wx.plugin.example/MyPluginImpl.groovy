@@ -8,9 +8,6 @@ class MyPluginImpl implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-//        project.task("testTask") << {
-//            println("Hello gradle plugin")
-//        }
         project.gradle.addListener(new TimeListener())
 
         project.extensions.create('pluginExt', PluginExtension)
@@ -18,6 +15,7 @@ class MyPluginImpl implements Plugin<Project> {
         //project.extensions.create('pluginExt', PluginExtension)
         //也可以在新增的project.pluginExt.extensions添加
         project.pluginExt.extensions.create('nestExt', PluginNestExtension)
-        project.task('customTask', type : CustomTask)
+
+        project.task(group: "wx",'customTask', type : CustomTask)
     }
 }
