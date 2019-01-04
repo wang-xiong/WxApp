@@ -12,15 +12,15 @@ buildscript {
     }
 }
 //例7
-//apply plugin: 'test-plugin'
-//
-////定义外部参数，pluginExt nestExt等相关参数都是在test-plugin插件中定义的
-//pluginExt {
-//    param1 = 'app param1'
-//    nestExt {
-//        nestParam1 = 'app nestParam1'
-//    }
-//}
+apply plugin: 'test-plugin'
+
+//定义外部参数，pluginExt nestExt等相关参数都是在test-plugin插件中定义的
+pluginExt {
+    param1 = 'app param1'
+    nestExt {
+        nestParam1 = 'app nestParam1'
+    }
+}
 
 android {
     compileSdkVersion 28

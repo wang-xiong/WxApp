@@ -11,7 +11,7 @@ import org.gradle.util.Clock
 
 
 class TimeListener implements TaskExecutionListener, BuildListener {
-    private Clock clock
+    private long startTime
     private times = []
 
     @Override
@@ -46,12 +46,12 @@ class TimeListener implements TaskExecutionListener, BuildListener {
 
     @Override
     void beforeExecute(Task task) {
-        clock = new Clock(System.currentTimeMillis())
+        startTime = System.currentTimeMillis();
     }
 
     @Override
     void afterExecute(Task task, TaskState taskState) {
-        def ms = System.currentTimeMillis() - clock.startTime
+        def ms = System.currentTimeMillis() - startTime
         times.add([ms, task.path])
         task.project.logger.warn("${task.path} spend ${ms}ms")
     }
