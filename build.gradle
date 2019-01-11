@@ -1,20 +1,25 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 //应用全局配置config.gradle
 apply from: "config.gradle"
 
 buildscript { //定义全局的相关属性
     
     repositories {
+        maven {
+            url uri('gradle_plugins/repo')
+        }
         //{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         maven { url "https://maven.aliyun.com/repository/jcenter" }
         maven { url 'https://dl.google.com/dl/android/maven2/' }
         google()
         jcenter()
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
 
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        //android-apt
+        //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha07'
 
@@ -22,9 +27,8 @@ buildscript { //定义全局的相关属性
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
         classpath 'com.billy.android:autoregister:1.4.1'
 
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        //自定义插件
+        classpath 'com.wx.plugin.example.plugin:plugin_test:1.1.0'
     }
 }
 

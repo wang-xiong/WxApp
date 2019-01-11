@@ -4,7 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
-import com.example.app_mvvm.test4.utils.ViewModelUtil;
 import com.example.lib_mvvm.utils.ViewModelUtil;
 
 public class AbsViewModel<R extends AbsRepository> extends AndroidViewModel {
@@ -20,7 +19,7 @@ public class AbsViewModel<R extends AbsRepository> extends AndroidViewModel {
     protected void onCleared() {
         super.onCleared();
         if (mRepository != null) {
-            mRepository.onCleared();
+            mRepository.unDisposable();
         }
     }
 }

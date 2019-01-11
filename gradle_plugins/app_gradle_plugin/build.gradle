@@ -1,20 +1,20 @@
 apply plugin: 'com.android.application'
 
-buildscript {
-    repositories {
-        maven {
-            url uri('../repo')
-        }
-    }
-
-    dependencies {
-        classpath 'com.wx.plugin.example.plugin:plugin_test:1.1.0'
-    }
-}
+//buildscript {
+//    repositories {
+//        maven {
+//            url uri('../repo')
+//        }
+//    }
+//
+//    dependencies {
+//        classpath 'com.wx.plugin.example.plugin:plugin_test:1.1.0'
+//    }
+//}
 //例7
 apply plugin: 'test-plugin'
 
-//定义外部参数，pluginExt nestExt等相关参数都是在test-plugin插件中定义的
+////定义外部参数，pluginExt nestExt等相关参数都是在test-plugin插件中定义的
 pluginExt {
     param1 = 'app param1'
     nestExt {
@@ -47,7 +47,7 @@ android {
 
 }
 
-//例2=========
+//例1=========
 //configurations {
 //    myDependency
 //}
@@ -81,12 +81,13 @@ dependencies {
 //1.创建Task===========
 //(1)
 //task helloTask() {
+//    group = 'wx'
 //    println("hello my Task")
 //}
 //(2)
 //this.tasks.create(name: 'helloTask1')
 //helloTask1.group = 'wx'
-//(3)
+////(3)
 //task helloTask(group: "wx", description: 'task test') {
 //    println("hello my Task")
 //}
@@ -116,25 +117,25 @@ dependencies {
 //helloTask.doLast {
 //    println("hello my Task doLast")
 //}
-//
+////
 //helloTask << {
 //    println("hello my Task <<")
 //}
 //
 //例5========
 //3.tasK执行顺序
-//task taskX(){
-//    group 'wx'
-//    doLast{
-//        println("taskX")
-//    }
-//}
-//task taskY(){
-//    group 'wx'
-//    doLast{
-//        println("taskY")
-//    }
-//}
+task taskX(){
+    group 'wx'
+    doLast{
+        println("taskX")
+    }
+}
+task taskY(){
+    group 'wx'
+    doLast{
+        println("taskY")
+    }
+}
 //(1)
 //task taskZ(dependsOn:[taskX,taskY]){
 //    group 'wx'
@@ -143,12 +144,12 @@ dependencies {
 //    }
 //}
 //(2)
-//task taskZ(){
-//    group 'wx'
-//    doLast{
-//        println("taskZ")
-//    }
-//}
+task taskZ(){
+    group 'wx'
+    doLast{
+        println("taskZ")
+    }
+}
 //taskZ.dependsOn(taskX,taskY)
 //这中taskX,taskY的执行顺序是随机的.
 //动态指定依赖,因为有时候创建的时候并不知道要依赖谁.
@@ -156,48 +157,48 @@ dependencies {
 //(3)afterEvaluate使用
 //afterEvaluate在配置阶段执行完,所有的task都会被创建成功了.
 //统计task执行阶段时长的功能
-//def startBuildTime, endBuildTime
-//this.afterEvaluate {
-//        //保证要找的task都已经配置完毕
-//    Project project ->
-//        //找到最开始执行的task
-//        def preBuildTask = project.tasks.getByPath('preBuild')
-//        preBuildTask.doFirst {
-//            startBuildTime = System.currentTimeMillis()
-//        }
-//        //找到最后执行的task
-//        def buildTask = project.tasks.getByPath('build')
-//        buildTask.doLast {
-//            endBuildTime = System.currentTimeMillis()
-//            println("build的时间差:::${endBuildTime - startBuildTime}")
-//        }
-//}
+def startBuildTime, endBuildTime
+this.afterEvaluate {
+        //保证要找的task都已经配置完毕
+    Project project ->
+        //找到最开始执行的task
+        def preBuildTask = project.tasks.getByPath('preBuild')
+        preBuildTask.doFirst {
+            startBuildTime = System.currentTimeMillis()
+        }
+        //找到最后执行的task
+        def buildTask = project.tasks.getByPath('build')
+        buildTask.doLast {
+            endBuildTime = System.currentTimeMillis()
+            println("build的时间差:::${endBuildTime - startBuildTime}")
+        }
+}
 
 //例6========
 //自定义plugin
-//apply plugin: MyPlugin
-//class MyPlugin implements Plugin<Project> {
-//
-//    @Override
-//    void apply(Project target) {
-//        target.extensions.create("dateAndTime", DateAddTimePluginExtension)
-//
-//        target.task('showTime') << {
-//            println("current time is:" + new Date().format(target.dateAndTime.timeFormat))
-//        }
-//        target.showTime.group = 'wx'
-//
-//        target.tasks.create('showData') << {
-//            println("current date is:" + new Date().format(target.dateAndTime.dateFormat))
-//        }
-//        target.showData.group = 'wx'
-//    }
-//}
-//
-//class DateAddTimePluginExtension {
-//    String timeFormat = "MM/dd/yyyyHH:mm:ss.SSS"
-//    String dateFormat = "yyyy-MM-dd"
-//}
+apply plugin: MyPlugin
+class MyPlugin implements Plugin<Project> {
+
+    @Override
+    void apply(Project target) {
+        target.extensions.create("dateAndTime", DateAddTimePluginExtension)
+
+        target.task('showTime') << {
+            println("current time is:" + new Date().format(target.dateAndTime.timeFormat))
+        }
+        target.showTime.group = 'wx'
+
+        target.tasks.create('showData') << {
+            println("current date is:" + new Date().format(target.dateAndTime.dateFormat))
+        }
+        target.showData.group = 'wx'
+    }
+}
+
+class DateAddTimePluginExtension {
+    String timeFormat = "MM/dd/yyyyHH:mm:ss.SSS"
+    String dateFormat = "yyyy-MM-dd"
+}
 //dateAndTime {
 //    timeFormat = 'HH:mm:ss.SSS'
 //    dateFormat = 'MM/dd/yyyy'
