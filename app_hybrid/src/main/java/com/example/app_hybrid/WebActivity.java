@@ -27,7 +27,7 @@ import java.util.Set;
  * Android混合开发：Java+h5
  * 1、WebView如何加载H5的页面
  * 2、Android如何调用H5的方法
- * 3、H5任何调用Android的方法
+ * 3、H5如何调用Android的方法
  */
 
 public class WebActivity extends AppCompatActivity {
@@ -124,7 +124,7 @@ public class WebActivity extends AppCompatActivity {
             }
         });
 
-        /*webView.setWebViewClient(new WebViewClient() {
+        webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 //request.getUrl();
@@ -156,7 +156,7 @@ public class WebActivity extends AppCompatActivity {
                 }
                 return super.shouldOverrideUrlLoading(view, url);
             }
-        });*/
+        });
         WebSettings webSettings = webView.getSettings();
         //设置可调用js方法
         webSettings.setJavaScriptEnabled(true);
@@ -180,7 +180,18 @@ public class WebActivity extends AppCompatActivity {
         webView.loadUrl("javascript:alertMessage( \" " + content + " \" )");
     }
 
-    //3、调用有参数有返回值的方法
+    //3.evaluateJavascript调用
+    private void invokeJsMethod4() {
+        String content = "Android调用了js方法";
+        webView.evaluateJavascript("javascript:alertMessage(\"" + content + " \" )", new ValueCallback<String>() {
+            @Override
+            public void onReceiveValue(String value) {
+                Toast.makeText(WebActivity.this, "调用js结果value:" + value, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    //4、调用有参数有返回值的方法
     private void invokeJsMethod3() {
         webView.evaluateJavascript("sum(1,2)", new ValueCallback<String>() {
             @Override
@@ -191,15 +202,7 @@ public class WebActivity extends AppCompatActivity {
         });
     }
 
-    private void invokeJsMethod4() {
-        String content = "Android调用了js方法";
-        webView.evaluateJavascript("javascript:alertMessage(\"" + content + " \" )", new ValueCallback<String>() {
-            @Override
-            public void onReceiveValue(String value) {
-                Toast.makeText(WebActivity.this, "调用js结果value:" + value, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+
 
     /**
      * Android调用JS方法：
@@ -235,7 +238,6 @@ public class WebActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new AndroidToJs(), "android");
 
     }
-
 
     public class AndroidToJs {
         //1.定义JS需要调用的方法

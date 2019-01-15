@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.example.app_dagger2.DaggerMyParentComponent;
 import com.example.app_dagger2.R;
 import com.example.app_dagger2.dagge2.test1.ICommonView;
 

@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.app_dagger2.DaggerCommonComponent;
-import com.example.app_dagger2.DaggerSecondComponent;
 import com.example.app_dagger2.R;
 
 import javax.inject.Inject;
