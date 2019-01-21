@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.squareup:javapoet:1.11.1'
+    //implementation 'com.google.guava:guava:27.0.1-jre'
+    api 'com.google.guava:guava:27.0.1-android'
+
+    api 'com.google.auto:auto-common:0.10'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
