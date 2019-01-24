@@ -3,6 +3,9 @@ package com.example.app_apm;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.app_apm.blockcanary.AppBlockContext;
+import com.github.anrwatchdog.ANRWatchDog;
+import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -22,6 +25,12 @@ public class ApmApplication extends Application {
         }
         this.mRefWatcher = LeakCanary.install(this);
         // Normal app init code...
+
+        //2.初始化BlockCanary
+        BlockCanary.install(this, new AppBlockContext()).start();
+
+        //3.初始化ANRWatchDog
+        new ANRWatchDog().start();
     }
 
     public static RefWatcher getRefWatcher(Context context) {
