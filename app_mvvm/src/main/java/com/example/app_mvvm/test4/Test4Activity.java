@@ -25,22 +25,6 @@ public class Test4Activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test3);
-        Observable.just(doTest())
-                .map(new Function<Integer, Integer>() {
-                    @Override
-                    public Integer apply(Integer integer) throws Exception {
-                        Log.e("wx11", Thread.currentThread().getName());
-                        return 3;
-                    }
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<Integer>() {
-                    @Override
-                    public void accept(Integer integer) throws Exception {
-                        Log.e("wx22", Thread.currentThread().getName());
-                    }
-                });
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
@@ -48,11 +32,5 @@ public class Test4Activity extends AppCompatActivity {
                     .add(R.id.fragment_container, ProjectListFragment4.newInstance(), ProjectListFragment4.TAG)
                     .commit();
         }
-    }
-
-    private int doTest() {
-        int a = 111;
-        Log.e("wx", Thread.currentThread().getName());
-        return a;
     }
 }
