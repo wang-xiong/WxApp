@@ -4,19 +4,16 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
+import com.example.app_mvvm_livedata.http.HttpHelper;
+
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeRepository {
     private final MutableLiveData<List<Project>> data = new MutableLiveData<>();
@@ -25,7 +22,7 @@ public class HomeRepository {
     private GitHubService gitHubService;
 
     public HomeRepository(Application application) {
-        gitHubService = HttpHelper.getInstance().createService(GitHubService.class);
+        gitHubService = HttpHelper.getInstance(application, GitHubService.HTTPS_API_GITHUB_URL).createService(GitHubService.class);
     }
 
     public LiveData<Boolean> getIsShowLoading() {

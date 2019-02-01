@@ -5,6 +5,14 @@ buildscript { //定义全局的相关属性
     
     repositories {
         maven {
+            //坑死：1不行，2、3可以
+            //url uri("snapshotRepository")
+            url "file://"+project.rootDir.absolutePath+"/snapshotRepository"
+            //url uri("file:///Users/wangxiong/AndroidStudioProjects/ele/warlock/snapshotRepository")
+        }
+
+
+        maven {
             url uri('gradle_plugins/repo')
         }
         maven { url "https://maven.aliyun.com/repository/jcenter" }

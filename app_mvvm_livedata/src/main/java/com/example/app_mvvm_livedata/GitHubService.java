@@ -1,13 +1,19 @@
 package com.example.app_mvvm_livedata;
 
 
+
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.Call;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.QueryMap;
 
 public interface GitHubService {
 
@@ -21,4 +27,5 @@ public interface GitHubService {
 
     @GET(URL.PROJECT_LIST)
     Observable<List<Project>> loadProjectList(@Path("user") String user);
+
 }

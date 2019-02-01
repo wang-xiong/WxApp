@@ -1,0 +1,50 @@
+apply plugin: 'maven'
+
+//返回仓库账号
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+//返回仓库密码
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+
+//返回Release仓库地址
+def getReleaseRepository() {
+    String localRepository = "file://" + project.rootDir.absolutePath + "/snapshotRepository"
+    return hasProperty("RELEASE_REPOSITORY_URL") ? RELEASE_REPOSITORY_URL : localRepository
+}
+
+//返回SnapShot仓库地址
+def getSnapShotRepository() {
+    String localRepository = "file://" + project.rootDir.absolutePath + "/releaseRepository"
+    return hasProperty("SNAPSHOT_REPOSITORY_URL") ? SNAPSHOT_REPOSITORY_URL : localRepository
+}
+
+afterEvaluate { project ->
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                snapshotRepository(url: getSnapShotRepository()) {
+                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                }
+                repository(url: getReleaseRepository()) {
+                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                }
+                pom.project {
+                    version VERSION_NAME
+                    artifactId POM_ARTIFACT_ID
+                    groupId GROUP
+                    packaging SDK_TYPE
+                }
+            }
+        }
+    }
+
+    artifacts {
+        archives(file('libs/test.aar')) {
+            classifier = 'test'
+        }
+    }
+
+}
