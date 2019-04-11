@@ -1,21 +1,20 @@
-package com.example.homemodule.test.activity;
+package com.example.app_eventbus;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 
-import com.example.component_base.base.mvc.BaseMvcActivity;
-import com.example.homemodule.test.MessageEvent;
+import com.example.aap_eventbus.R;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-public class ActivityA extends BaseMvcActivity {
+public class EventBus3Activity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_event_bus3);
         EventBus.getDefault().register(this);
 
         EventBus.getDefault().post(new MessageEvent("Test eventBus"));

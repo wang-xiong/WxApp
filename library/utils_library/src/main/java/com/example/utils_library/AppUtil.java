@@ -17,26 +17,6 @@ import java.util.List;
 
 public class AppUtil {
 
-    /**
-     * 判单是否安装某应用
-     *
-     * @param context
-     * @param packageName
-     * @return
-     */
-    public static boolean isAppInstall(Context context, String packageName) {
-        if (context == null || TextUtils.isEmpty(packageName)) {
-            return false;
-        }
-        PackageManager packageManager = context.getApplicationContext().getPackageManager();
-        List<PackageInfo> infoList = packageManager.getInstalledPackages(0);
-        for (PackageInfo info : infoList) {
-            if (info.packageName.equals(packageName)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 
     public static void showInputMethod(Activity activity) {

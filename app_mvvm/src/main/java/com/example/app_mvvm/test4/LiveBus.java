@@ -15,7 +15,7 @@ public class LiveBus {
     private static volatile LiveBus instance;
     private final ConcurrentHashMap<String, LiveBusData<Object>> mLiveBus;
 
-    public LiveBus() {
+    private LiveBus() {
         mLiveBus = new ConcurrentHashMap<>();
     }
 

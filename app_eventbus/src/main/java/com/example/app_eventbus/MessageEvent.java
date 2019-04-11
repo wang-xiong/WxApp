@@ -1,4 +1,4 @@
-package com.example.homemodule.test;
+package com.example.app_eventbus;
 
 public class MessageEvent {
 

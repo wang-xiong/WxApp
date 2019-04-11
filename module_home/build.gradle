@@ -77,5 +77,4 @@ dependencies {
     implementation rootProject.ext.dependencies.recyclerview_v7
     implementation rootProject.ext.dependencies.gson
 
-    implementation 'org.greenrobot:eventbus:3.0.0'
 }
