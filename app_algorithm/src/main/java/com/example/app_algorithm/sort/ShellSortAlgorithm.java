@@ -1,4 +1,4 @@
-package com.example.app_algorithm;
+package com.example.app_algorithm.sort;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class ShellSortAlgorithm {
             for (int i = h; i < source.length; i++) {
                 int temp = source[i];
                 int j = i - h;
-                while (j >= 0 && source[j] > source[i]) {
+                while (j >= 0 && source[j] > temp) {
                     source[j + h] = source[j];
                     j -= h;
                 }

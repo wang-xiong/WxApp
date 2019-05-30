@@ -1,4 +1,4 @@
-package com.example.app_algorithm;
+package com.example.app_algorithm.sort;
 
 public class BubbleSortAlgorithm {
 

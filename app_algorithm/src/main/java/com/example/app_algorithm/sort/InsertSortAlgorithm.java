@@ -1,4 +1,4 @@
-package com.example.app_algorithm;
+package com.example.app_algorithm.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,7 +37,7 @@ public class InsertSortAlgorithm {
             int temp = source[i];
             int j = i - 1;
             while (j >= 0 && source[j] > temp) {
-                //3.比较排序好数据，当大于待插入数据，相互移动当前数据
+                //3.比较排序好数据，当大于待插入数据，向后移动当前数据
                 source[j + 1] = source[j];
                 j--;
             }

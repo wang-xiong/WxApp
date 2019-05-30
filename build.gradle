@@ -10,11 +10,8 @@ buildscript { //定义全局的相关属性
             url "file://"+project.rootDir.absolutePath+"/snapshotRepository"
             //url uri("file:///Users/wangxiong/AndroidStudioProjects/ele/warlock/snapshotRepository")
         }
+        maven { url uri('gradle_plugins/repo') }
 
-
-        maven {
-            url uri('gradle_plugins/repo')
-        }
         maven { url "https://maven.aliyun.com/repository/jcenter" }
         maven { url 'https://dl.google.com/dl/android/maven2/' }
         google()

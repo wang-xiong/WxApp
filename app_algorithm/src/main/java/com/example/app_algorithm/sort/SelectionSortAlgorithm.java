@@ -1,11 +1,9 @@
-package com.example.app_algorithm;
+package com.example.app_algorithm.sort;
 
 public class SelectionSortAlgorithm {
 
     public static void main(String[] args) {
-
         int[] source = {10, 8, 9, 2, 30, 18};
-
         printlnArray(selectSort(source));
     }
 
